@@ -1,0 +1,493 @@
+// Place all the styles related to the school controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin common-input{
+	background-color: transparent;
+  border-top: none;
+  border-right: none;
+  border-bottom: 2px solid #abacae;
+  border-left: 2px solid #abacae;
+  border-radius: 0px;
+  height: 40px;
+  color: #abacae;
+}
+@mixin common-dropdown{
+	@include common-input;
+	-webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+@mixin common-spin{
+	color: #abacae;
+  border-left: 2px solid #abacae;
+  position: absolute;
+  right: 27px;
+  padding: 8px 0px 10px 15px;
+  border-radius: 1px;
+}
+@mixin common-button{
+	background-color: #01cdce;
+  border: 1px solid black;
+  height: 40px;
+  border-radius: 2px;
+}
+.italic{
+	 font-style: italic;
+   color:rgb(100,100,100);
+}
+
+//-------------Select2 Customizing code------------
+.select2-search{
+	background:#1c2729 !important;
+		display:none !important;
+	input{
+		border:none !important;
+		color:white;	
+		background: #1c2729 !important;
+	}
+}
+.select2-no-results{
+	background:#1c2729 !important;
+}
+.select2-drop{
+	border-radius: 0px !important;
+}
+.select2-drop-active{
+	border:1px solid rgb(255,255,255) !important;
+}
+.select2-container-active .select2-choice, .select2-container-active .select2-choices{
+	border:1px solid rgb(255,255,255) !important;
+}
+.select2-results{
+	padding-left:0px !important;
+	margin-right:0px !important;
+	margin-top:0px !important;
+	margin-bottom:0px !important;
+	.select2-highlighted{
+		background:rgb(76,208,210) !important;
+		color:rgb(45,45,45);
+	}
+	.select2-result-selectable .select2-match, .select2-result-unselectable .select2-match{
+		padding-left:10px;
+	}
+	li{
+		background:#1c2729;
+		color:rgb(171,171,171);
+	}
+	.select2-disabled{
+		display: none !important;
+	}
+	.select2-result:hover{
+		background:rgb(76,208,210);
+	}
+}
+.select2-chosen{
+	font-size: 14px;
+	font-family: sans-serif;
+}
+.select2-container{
+	a{
+		padding-left:15px !important;
+		span{
+			margin-top:5px;
+		}
+	}
+	.select2-choice{
+		color: #ABACAE !important;
+	}
+}
+//---------the main style---------
+.fa-pencil:hover{
+	cursor: pointer;
+}
+.wrapper{
+	max-width: 1440px;
+	@media (min-width: 768px) {
+		width: initial;
+	}
+	margin: 0 auto;
+
+	.head-tail{
+		margin-top: 200px;
+		padding-top: 50px;
+		padding-bottom: 100px;
+  	background-color: #1c2729;
+  	.loan-calc{
+  		.container-loan{
+    		text-align: center;
+    		color: white;
+    		font-size: 17px;
+    	}
+  	}
+  	.comp-school{
+  		.container-comp{
+    		text-align: center;
+    		color: white;
+    		font-size: 17px;
+    	}
+  	}
+	}
+	.head-loan-calc{
+		text-align: center;
+    color: white;
+    background: url("sec-head-banner.jpg") no-repeat;
+    background-repeat:no-repeat;
+    background-color: #1c2729;
+    background-size:100% 100%;	
+    height: fixed;
+    h1{
+    	margin: 0;
+    	padding: 60px 0px;
+    }
+    i{
+    	padding: 1px 0px 5px;
+    }
+    .fa-1x{
+			display:none;
+			@media screen and (max-width: 768px) {
+				display: block;
+				height: 25px;
+			}
+		}
+		.fa-2x{
+			display:block;
+			@media screen and (max-width: 768px) {
+				display: none;
+			}
+		}
+	}
+	.detail-loan-calc{
+		background-color: #1c2729;
+		.loan-left{
+			@media screen and (max-width: 768px) {			
+					padding-left:5%;
+					padding-right:5%;
+			}
+			.row{
+				div{
+					p{
+						padding-left:0px !important;
+					}
+				}
+				>div {
+					margin-top: 30px;
+					>div{
+						width:100%;
+					}
+				}
+				div{
+					div{
+						padding-left: 0px;
+						padding-right: 0px;
+						a{
+							border-top: none;
+					    border-width: 2px;
+					    border-right: 2px;
+							height:40px;
+							border-radius: 0px;
+							background: transparent;
+							.select2-arrow{
+								display: none;
+							}
+						}
+					}
+				}
+			}
+			input{
+				width:100%;
+				@include common-input;
+				color: #abacae;
+			}
+			ul.dropdown-menu{
+				background-color: #1c2729;
+				max-width: 100%;
+		    width: 94.5%;
+		    border-radius: 0px;
+		    border: 1px solid #abacae;
+			}
+			ul.dropdown-menu li a{
+				color: #abacae;
+			}
+			.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus{
+				background-color: #4cd0d2;
+				color: black;
+			}
+			select{
+				width:100%;
+				@include common-dropdown;
+				option{
+					background-color: #2d2d2d;
+				}	
+			}
+			datalist{
+				option{
+					background-color: #2d2d2d;
+				}
+			}
+			label{
+				@include common-spin;
+			}
+			button{
+				@include common-button;
+			}
+		}
+		.loan-right{
+			padding-top: 35px;
+			.title-attr{
+				margin-bottom: 10px;
+				label{
+					font-size: 22px;
+					color: #abacae;
+				}
+				input{
+					@include common-input;
+					text-align: center;
+					height: 30px;
+					width: 75px;
+					float: right;
+				}
+			}	
+			@media screen and (max-width: 768px) {
+					padding-left:5%;
+					padding-right:5%;
+			}
+			.row{
+				.db-no-str{
+					color:#969696;
+				}
+				.scroll{
+					margin-bottom:15px;
+				}
+				.row{
+					.detail-result{
+						p{
+							input{
+								width:80%;
+							}
+						}
+					}
+				}
+			}
+			.repayment-period-num{
+				padding:0px 0px 10px 0px;
+				li{
+					position: relative;
+					display: inline-block;
+    			margin-right: 6.5%;
+    			color: #abacae;
+    			font-size: 1em;
+    			p{
+    				position:absolute;
+    			}
+				}
+				li.last-number{
+					margin-right: 0px;
+				}
+			}
+			.interest-rate-num{
+				padding:0px 0px 10px 0px;
+				li{
+					position: relative;
+					display: inline-block;
+    			margin-right: 9.8%;
+    			color: #abacae;
+    			font-size: 1em;
+    			p{
+    				position:absolute;
+    			}
+				}
+				li.last-number{
+					margin-right: 0px;
+				}
+			}
+			.detail-result .values{
+				background-color: #2f393b;
+				height:100%;
+				ul{
+					padding-top: 15px;
+					padding-bottom: 15px;
+					margin:0px;
+					li{
+						font-size: 25px;
+	    			color: #abacae;
+	    			font-weight: 700;
+	    			p{
+	    				@media screen and (max-width: 768px) {
+								font-size: 20px;
+							}
+							@media screen and (max-width: 1024px) {
+								font-size: 21px;
+							}
+	    				line-height: 20px;
+	    				margin-bottom:4px;
+	    				span{
+	    					font-weight: 300;
+	    				}
+	    				i{
+	    					float: right;
+	    					padding-right: 15px;
+	    				}
+	    			}
+					}
+				}
+			}
+			.month-result{
+				>div{
+				background-color: #5b6e74;
+				}
+				padding: 0px 15px;
+				p{
+
+					@media screen and (max-width: 768px) {
+						font-size: 20px;
+					}
+					@media screen and (max-width: 1024px) {
+						font-size: 21px;
+					}
+					line-height: 28px;
+					font-size: 25px;
+	    		color: #abacae;
+	    		font-weight: 700;
+					margin:0px 0px 0px 40px;
+					span{
+						font-weight: 300;
+					}
+				}
+			}
+		}
+	}
+	.head-comp-school{
+		.fa-1x{
+			display:none;
+			@media screen and (max-width: 768px) {
+				display: block;
+				height: 25px;
+
+			}
+		}
+		.fa-2x{
+			display:block;
+			@media screen and (max-width: 768px) {
+				display: none;
+			}
+		}
+		text-align: center;
+  	color: white;
+  	background: url("sec-head-banner.jpg") no-repeat;
+  	background-repeat:no-repeat;
+  	background-size:100% 100%;	
+  	background-color: #1c2729;
+  	height: fixed;
+  	h1{
+  		margin: 0;
+  		padding: 60px 0px;
+  	}
+  	i{
+  		padding: 1px 0px 5px;
+  	}
+	}
+	.detail-comp-school{
+		font-weight:bold;
+		.select2-container .select2-choice > .select2-chosen{
+			color:rgb(150,150,150);
+		}
+		p.db-no-str{
+			position: absolute;
+			left:0; 
+			right:0;
+			color:rgb(150,150,150);
+			font-size: 13px;
+		}
+		background-color: #1c2729;
+		color: white;
+		.detail-data{
+				border-bottom: 1px solid #abacae;
+		}
+		>div{
+			margin-top: 30px;
+			@media screen and (max-width: 768px) {
+				padding-left: 5% !important	;
+				padding-right: 5% !important;
+			}	
+		}
+		.select2-container{
+			@media screen and (max-width: 768px) {
+				width:100%;
+			}	
+			padding-left: 0px;
+			padding-right:0px;			
+			a{
+				border-top: none;
+		    border-width: 2px;
+		    border-right: 2px;
+				height:40px;
+				border-radius: 0px;
+				background: transparent;
+				text-align: center;
+				.select2-arrow{
+					display: none;
+				}
+			}
+		}
+		div{
+			p{
+			text-align: center;
+			}
+			padding-bottom: 10px;
+			input{
+				@include common-input;
+				width:100%;
+				color:white;
+				font-weight: bold !important;
+				font-family: sans-serif;
+				text-align: center;
+			}
+			input::-webkit-input-placeholder{
+				color:rgb(150,150,150);
+				font-weight: bold;
+			}
+			input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+				color:rgb(150,150,150);
+			}
+			input::-moz-placeholder { /* Mozilla Firefox 19+ */
+   			color:rgb(150,150,150);
+			}
+			input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			  color:rgb(150,150,150);
+			}
+			ul.dropdown-menu{
+				background-color: #1c2729;
+				max-width: 100%;
+		    width: 94.5%;
+		    border-radius: 0px;
+		    border: 1px solid #abacae;
+			}
+			ul.dropdown-menu li a{
+				color: #abacae;
+			}
+			.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus{
+				background-color: #4cd0d2;
+				color: black;
+			}
+			select{
+				width:100%;
+				@include common-dropdown;
+				option{
+					background-color: #2d2d2d;
+				}
+			}
+			label{
+				@include common-spin;
+			}
+			div{
+				p{margin: 0px}
+			}
+			.numerical-data{
+				font-size: 22px;
+    		padding-top: 5px;
+    		font-weight: 200;
+			}
+		}
+	}
+}

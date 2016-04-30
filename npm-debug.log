@@ -1,0 +1,170 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '@iamadamjowett/angular-click-outside' ]
+2 info using npm@1.3.10
+3 info using node@v0.10.25
+4 verbose cache add [ '@iamadamjowett/angular-click-outside', null ]
+5 verbose cache add name=undefined spec="@iamadamjowett/angular-click-outside" args=["@iamadamjowett/angular-click-outside",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: '@iamadamjowett/angular-click-outside',
+6 verbose parsed url   path: '@iamadamjowett/angular-click-outside',
+6 verbose parsed url   href: '@iamadamjowett/angular-click-outside' }
+7 verbose cache add name="" spec="iamadamjowett/angular-click-outside" args=["","iamadamjowett/angular-click-outside"]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'iamadamjowett/angular-click-outside',
+8 verbose parsed url   path: 'iamadamjowett/angular-click-outside',
+8 verbose parsed url   href: 'iamadamjowett/angular-click-outside' }
+9 silly lockFile 8f305c02-adamjowett-angular-click-outside iamadamjowett/angular-click-outside
+10 verbose lock iamadamjowett/angular-click-outside /home/rms/.npm/8f305c02-adamjowett-angular-click-outside.lock
+11 info maybeGithub Attempting iamadamjowett/angular-click-outside from git://github.com/iamadamjowett/angular-click-outside
+12 silly lockFile 4a43a57a-adamjowett-angular-click-outside git://github.com/iamadamjowett/angular-click-outside
+13 verbose lock git://github.com/iamadamjowett/angular-click-outside /home/rms/.npm/4a43a57a-adamjowett-angular-click-outside.lock
+14 verbose addRemoteGit [ 'git://github.com/iamadamjowett/angular-click-outside',
+14 verbose addRemoteGit   'master' ]
+15 verbose git remote.origin.url git://github.com/iamadamjowett/angular-click-outside
+16 verbose git fetch -a origin (git://github.com/iamadamjowett/angular-click-outside)
+17 verbose git rev-list -n1 master 5c64f22d83462c117a82684e31dd5bcb9a1011d5
+18 verbose resolved git url git://github.com/iamadamjowett/angular-click-outside#5c64f22d83462c117a82684e31dd5bcb9a1011d5
+19 verbose tar unpack /home/rms/tmp/npm-31400-J2VCl04T/1461527214145-0.6961202276870608/tmp.tgz
+20 silly lockFile 8a680ced-14145-0-6961202276870608-package tar:///home/rms/tmp/npm-31400-J2VCl04T/1461527214145-0.6961202276870608/package
+21 verbose lock tar:///home/rms/tmp/npm-31400-J2VCl04T/1461527214145-0.6961202276870608/package /home/rms/.npm/8a680ced-14145-0-6961202276870608-package.lock
+22 silly lockFile 88ab9463-14145-0-6961202276870608-tmp-tgz tar:///home/rms/tmp/npm-31400-J2VCl04T/1461527214145-0.6961202276870608/tmp.tgz
+23 verbose lock tar:///home/rms/tmp/npm-31400-J2VCl04T/1461527214145-0.6961202276870608/tmp.tgz /home/rms/.npm/88ab9463-14145-0-6961202276870608-tmp-tgz.lock
+24 silly gunzTarPerm modes [ '755', '644' ]
+25 silly gunzTarPerm extractEntry
+26 silly gunzTarPerm modified mode [ '', 509, 493 ]
+27 silly gunzTarPerm extractEntry .gitattributes
+28 silly gunzTarPerm modified mode [ '.gitattributes', 436, 420 ]
+29 silly gunzTarPerm extractEntry .gitignore
+30 silly gunzTarPerm modified mode [ '.gitignore', 436, 420 ]
+31 silly gunzTarPerm extractEntry Gruntfile.js
+32 silly gunzTarPerm modified mode [ 'Gruntfile.js', 436, 420 ]
+33 silly gunzTarPerm extractEntry LICENSE.md
+34 silly gunzTarPerm modified mode [ 'LICENSE.md', 436, 420 ]
+35 silly gunzTarPerm extractEntry README.md
+36 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+37 silly gunzTarPerm extractEntry bower.json
+38 silly gunzTarPerm modified mode [ 'bower.json', 436, 420 ]
+39 silly gunzTarPerm extractEntry clickoutside.directive.js
+40 silly gunzTarPerm modified mode [ 'clickoutside.directive.js', 436, 420 ]
+41 silly gunzTarPerm extractEntry example/
+42 silly gunzTarPerm modified mode [ 'example/', 509, 493 ]
+43 silly gunzTarPerm extractEntry example/.gitignore
+44 silly gunzTarPerm modified mode [ 'example/.gitignore', 436, 420 ]
+45 silly gunzTarPerm extractEntry example/README.md
+46 silly gunzTarPerm modified mode [ 'example/README.md', 436, 420 ]
+47 silly gunzTarPerm extractEntry example/app.js
+48 silly gunzTarPerm modified mode [ 'example/app.js', 436, 420 ]
+49 silly gunzTarPerm extractEntry example/css/
+50 silly gunzTarPerm modified mode [ 'example/css/', 509, 493 ]
+51 silly gunzTarPerm extractEntry example/css/styles.css
+52 silly gunzTarPerm modified mode [ 'example/css/styles.css', 436, 420 ]
+53 silly gunzTarPerm extractEntry example/index.html
+54 silly gunzTarPerm modified mode [ 'example/index.html', 436, 420 ]
+55 silly gunzTarPerm extractEntry example/js/
+56 silly gunzTarPerm modified mode [ 'example/js/', 509, 493 ]
+57 silly gunzTarPerm extractEntry example/js/controllers/
+58 silly gunzTarPerm modified mode [ 'example/js/controllers/', 509, 493 ]
+59 silly gunzTarPerm extractEntry example/js/controllers/app.controller.js
+60 silly gunzTarPerm modified mode [ 'example/js/controllers/app.controller.js', 436, 420 ]
+61 silly gunzTarPerm extractEntry package.json
+62 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+63 silly lockFile 8a680ced-14145-0-6961202276870608-package tar:///home/rms/tmp/npm-31400-J2VCl04T/1461527214145-0.6961202276870608/package
+64 silly lockFile 8a680ced-14145-0-6961202276870608-package tar:///home/rms/tmp/npm-31400-J2VCl04T/1461527214145-0.6961202276870608/package
+65 silly lockFile 88ab9463-14145-0-6961202276870608-tmp-tgz tar:///home/rms/tmp/npm-31400-J2VCl04T/1461527214145-0.6961202276870608/tmp.tgz
+66 silly lockFile 88ab9463-14145-0-6961202276870608-tmp-tgz tar:///home/rms/tmp/npm-31400-J2VCl04T/1461527214145-0.6961202276870608/tmp.tgz
+67 silly lockFile 4a43a57a-adamjowett-angular-click-outside git://github.com/iamadamjowett/angular-click-outside
+68 silly lockFile 4a43a57a-adamjowett-angular-click-outside git://github.com/iamadamjowett/angular-click-outside
+69 info maybeGithub Attempting iamadamjowett/angular-click-outside from git+ssh://git@github.com:iamadamjowett/angular-click-outside
+70 silly lockFile 3bfc2b88-adamjowett-angular-click-outside git+ssh://git@github.com:iamadamjowett/angular-click-outside
+71 verbose lock git+ssh://git@github.com:iamadamjowett/angular-click-outside /home/rms/.npm/3bfc2b88-adamjowett-angular-click-outside.lock
+72 verbose addRemoteGit [ 'git@github.com:iamadamjowett/angular-click-outside',
+72 verbose addRemoteGit   'master' ]
+73 verbose git remote.origin.url git@github.com:iamadamjowett/angular-click-outside
+74 verbose git fetch -a origin (git@github.com:iamadamjowett/angular-click-outside) Warning: Permanently added the RSA host key for IP address '192.30.252.130' to the list of known hosts.
+75 verbose git rev-list -n1 master 5c64f22d83462c117a82684e31dd5bcb9a1011d5
+76 verbose resolved git url git+ssh://git@github.com:iamadamjowett/angular-click-outside#5c64f22d83462c117a82684e31dd5bcb9a1011d5
+77 verbose tar unpack /home/rms/tmp/npm-31400-J2VCl04T/1461527217895-0.2083583923522383/tmp.tgz
+78 silly lockFile c1ed09a5-17895-0-2083583923522383-package tar:///home/rms/tmp/npm-31400-J2VCl04T/1461527217895-0.2083583923522383/package
+79 verbose lock tar:///home/rms/tmp/npm-31400-J2VCl04T/1461527217895-0.2083583923522383/package /home/rms/.npm/c1ed09a5-17895-0-2083583923522383-package.lock
+80 silly lockFile 7e59c581-17895-0-2083583923522383-tmp-tgz tar:///home/rms/tmp/npm-31400-J2VCl04T/1461527217895-0.2083583923522383/tmp.tgz
+81 verbose lock tar:///home/rms/tmp/npm-31400-J2VCl04T/1461527217895-0.2083583923522383/tmp.tgz /home/rms/.npm/7e59c581-17895-0-2083583923522383-tmp-tgz.lock
+82 silly gunzTarPerm modes [ '755', '644' ]
+83 silly gunzTarPerm extractEntry
+84 silly gunzTarPerm modified mode [ '', 509, 493 ]
+85 silly gunzTarPerm extractEntry .gitattributes
+86 silly gunzTarPerm modified mode [ '.gitattributes', 436, 420 ]
+87 silly gunzTarPerm extractEntry .gitignore
+88 silly gunzTarPerm modified mode [ '.gitignore', 436, 420 ]
+89 silly gunzTarPerm extractEntry Gruntfile.js
+90 silly gunzTarPerm modified mode [ 'Gruntfile.js', 436, 420 ]
+91 silly gunzTarPerm extractEntry LICENSE.md
+92 silly gunzTarPerm modified mode [ 'LICENSE.md', 436, 420 ]
+93 silly gunzTarPerm extractEntry README.md
+94 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+95 silly gunzTarPerm extractEntry bower.json
+96 silly gunzTarPerm modified mode [ 'bower.json', 436, 420 ]
+97 silly gunzTarPerm extractEntry clickoutside.directive.js
+98 silly gunzTarPerm modified mode [ 'clickoutside.directive.js', 436, 420 ]
+99 silly gunzTarPerm extractEntry example/
+100 silly gunzTarPerm modified mode [ 'example/', 509, 493 ]
+101 silly gunzTarPerm extractEntry example/.gitignore
+102 silly gunzTarPerm modified mode [ 'example/.gitignore', 436, 420 ]
+103 silly gunzTarPerm extractEntry example/README.md
+104 silly gunzTarPerm modified mode [ 'example/README.md', 436, 420 ]
+105 silly gunzTarPerm extractEntry example/app.js
+106 silly gunzTarPerm modified mode [ 'example/app.js', 436, 420 ]
+107 silly gunzTarPerm extractEntry example/css/
+108 silly gunzTarPerm modified mode [ 'example/css/', 509, 493 ]
+109 silly gunzTarPerm extractEntry example/css/styles.css
+110 silly gunzTarPerm modified mode [ 'example/css/styles.css', 436, 420 ]
+111 silly gunzTarPerm extractEntry example/index.html
+112 silly gunzTarPerm modified mode [ 'example/index.html', 436, 420 ]
+113 silly gunzTarPerm extractEntry example/js/
+114 silly gunzTarPerm modified mode [ 'example/js/', 509, 493 ]
+115 silly gunzTarPerm extractEntry example/js/controllers/
+116 silly gunzTarPerm modified mode [ 'example/js/controllers/', 509, 493 ]
+117 silly gunzTarPerm extractEntry example/js/controllers/app.controller.js
+118 silly gunzTarPerm modified mode [ 'example/js/controllers/app.controller.js', 436, 420 ]
+119 silly gunzTarPerm extractEntry package.json
+120 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+121 silly lockFile c1ed09a5-17895-0-2083583923522383-package tar:///home/rms/tmp/npm-31400-J2VCl04T/1461527217895-0.2083583923522383/package
+122 silly lockFile c1ed09a5-17895-0-2083583923522383-package tar:///home/rms/tmp/npm-31400-J2VCl04T/1461527217895-0.2083583923522383/package
+123 silly lockFile 7e59c581-17895-0-2083583923522383-tmp-tgz tar:///home/rms/tmp/npm-31400-J2VCl04T/1461527217895-0.2083583923522383/tmp.tgz
+124 silly lockFile 7e59c581-17895-0-2083583923522383-tmp-tgz tar:///home/rms/tmp/npm-31400-J2VCl04T/1461527217895-0.2083583923522383/tmp.tgz
+125 silly lockFile 61620d7a-adamjowett-angular-click-outside git@github.com:iamadamjowett/angular-click-outside
+126 silly lockFile 8f305c02-adamjowett-angular-click-outside iamadamjowett/angular-click-outside
+127 silly lockFile 8f305c02-adamjowett-angular-click-outside iamadamjowett/angular-click-outside
+128 error addLocal Could not install iamadamjowett/angular-click-outside
+129 error Error: ENOENT, stat 'iamadamjowett/angular-click-outside'
+130 error If you need help, you may report this log at:
+130 error     <http://github.com/isaacs/npm/issues>
+130 error or email it to:
+130 error     <npm-@googlegroups.com>
+131 error System Linux 3.13.0-32-generic
+132 error command "/usr/bin/nodejs" "/usr/bin/npm" "install" "@iamadamjowett/angular-click-outside"
+133 error cwd /home/rms/rbworkplace/schoolloan2
+134 error node -v v0.10.25
+135 error npm -v 1.3.10
+136 error path iamadamjowett/angular-click-outside
+137 error code ENOENT
+138 error errno 34
+139 verbose exit [ 34, true ]

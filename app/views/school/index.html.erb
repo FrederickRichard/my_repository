@@ -1,0 +1,314 @@
+<div class="wrapper container" ng-app="schoolloan">
+	<div class="head-tail row">
+		<div class="loan-calc col-sm-6">
+			<div class="row">
+				<div class="container-loan col-sm-5 col-sm-offset-6">
+					<%= image_tag("circle.png", class: "circle") %>
+					<h3>LOAN CALCULATOR</h3>
+					<p>Calculate monthly payment and pay back period based on student's academic background and work experience</p>
+				</div>
+			</div>
+		</div>
+		<div class="comp-school col-sm-6">
+			<div class="row">
+				<div class="container-comp col-sm-5 col-sm-offset-1">
+					<%= image_tag("circle.png", class: "circle") %>
+					<h3>COMPARE SCHOOLS</h3>
+					<p>Compare monthly payment and pay back period based on the estimated tuition and fees of different schools</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="head-loan-calc row">
+		<h1>LOAN CALCULATOR</h1>
+		<%= fa_icon "chevron-down 2x"%>
+		<%= fa_icon "chevron-down 1x"%>
+	</div>
+	<div class="detail-loan-calc row" ng-controller="loan-calc">
+		<div class="loan-left col-sm-6">
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1">
+					<input  class="col-sm-12" ng-keypress="remove_school_validation()" mytype="text" data-provide ="typeahead" data-source="<%=@schoolnames%>" ng-model = "schoolnames " ng-change = 'refreshmajors()' placeholder="SCHOOL NAME" style="border-color:{{errordetail1 == '' ? '#abacae':'#a94442'}};">	
+					<p class="col-sm-12" style="color:#a94442;">{{errordetail1}}</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1">
+					<input  class="col-sm-12" id="major" type="text" ng-keypress="remove_major_validation()" ng-model = "major" placeholder="MAJOR" style="border-color:{{errordetail2 == '' ? '#abacae':'#a94442'}};">	
+					<p class="col-sm-12" style="color:#a94442;">{{errordetail2}}</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1">
+					<input  class="col-sm-12" id="loan_term_years" ng-keypress="remove_loantermyears_validation()" mytype="text" data-provide ="typeahead" data-source="years" ng-model = "loantermyears" ng-change = 'refreshmajors()' placeholder="YEARS IN SCHOOL" style="border-color:{{errordetail4 == '' ? '#abacae':'#a94442'}};">	
+					<p class="col-sm-12" style="color:#a94442;">{{errordetail4}}</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-7 col-sm-offset-1 ">
+					<label><%= fa_icon "chevron-down"%></label>
+					<select class=" col-sm-12 select1">
+						<option style="display: none"  value="" disabled selected>GPA</option>
+						<option ng-repeat="gpa in gpas">{{gpa}}</option>	
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-7 col-sm-offset-1">
+					<label><%= fa_icon "chevron-down"%></label>
+					<select class="select1 col-sm-12">
+						<option style="display: none"  value="" disabled selected>WORK EXPERIENCE</option>
+						<option ng-repeat="gpa in [0,1,2,3,4,5,6,7,8,9,10]">{{gpa}}</option>	
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-7 col-sm-offset-1">
+					<label><%= fa_icon "chevron-down"%></label>
+					<select class="select1 col-sm-12">
+						<option style="display: none"  value="" disabled selected>STATE OF RESIDENCE</option>
+						<option ng-repeat="state in states">{{state}}</option>	
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-7 col-sm-offset-1">
+					<label><%= fa_icon "chevron-down"%></label>
+					<select class="select1 col-sm-12">
+						<option style="display: none"  value="" disabled selected>CAREER PATH</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1">
+					<input type="text" class="col-sm-12" ng-keypress="remove_family_validation()" ng-model="familycontribution" placeholder="FAMILY CONTRIBUTION" style="border-color:{{errordetail3 == '' ? '#abacae':'#a94442'}};"/>
+					<p class="col-sm-12" style="color:#a94442;">{{errordetail3}}</p>
+				</div>
+				<div class="col-sm-10 col-sm-offset-1">
+					<button class="col-sm-12" ng-click="calc(1)">CALCULATE ></button>
+				</div>
+			</div>
+		</div>
+		<div class="loan-right col-sm-6">
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1 scroll">
+					<div class="row">
+						<div class="col-sm-12 title-attr ">
+							<label>Repayment Period (Years)</label>
+							<input type="text" ng-model="period" ng-change="calc(2)"/>
+						</div>
+						<div class="col-sm-12">
+							<input type="range" name="period" min="0" max="15" ng-model="period" ng-change="calc(2)">
+						</div>
+						<div class="col-sm-12">
+							<ul class="ruler-number repayment-period-num"><li><p>0</p></li><li><p>1</p></li><li><p>2</p></li><li><p>3</p></li><li><p>4</p></li><li><p>5</p></li><li><p>6</p></li><li><p>7</p></li><li><p>8</p></li><li><p>9</p></li><li><p>10</p></li><li><p>11</p></li><li><p>12</p></li><li><p>13</p></li><li><p>14</p></li><li class="last-number"><p>15</p></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1 scroll">
+					<div class="row">
+						<div class="col-sm-12 title-attr">
+							<label>INTEREST RATE (%)</label>
+							<input type="text" ng-model="interrate" ng-change="calc(2)"/>
+						</div>
+						<div class="col-sm-12">
+							<input type="range" name="interrate" min="0" max="10" step="0.1" ng-model="interrate" ng-change="calc(2)">
+						</div>
+						<div class="col-sm-12">
+							<ul class="ruler-number interest-rate-num"><li><p>0</p></li><li><p>1</p></li><li><p>2</p></li><li><p>3</p></li><li><p>4</p></li><li><p>5</p></li><li><p>6</p></li><li><p>7</p></li><li><p>8</p></li><li><p>9</p></li><li class="last-number"><p>10</p></li></ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1">	
+					<div class="row">
+						<div class="col-sm-12 detail-result">
+							<div class="values" style="height:100%">
+								<p>&nbsp;</p>
+								<ul>
+									<li>
+										<p>ESTIMATED ANNUAL SALARY</p>
+										<p><input id="annaul_salary" ng-blur="editmode = false"  type="text" ng-model="annualsalary" ng-show="editmode"  my-enter="editmode = false" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/><span ng-hide="editmode">{{annualsalary | myCurrency}}{{loan_star}}</span><i id="aaa" class="fa fa-pencil" event-focus="click" event-focus-id="annaul_salary" ng-click="editmode = true;"></i></p>
+									</li>
+								</ul>
+								<ul>	
+									<li>
+										<p>ESTIMATED ANNUAL TUITION</p>
+										<p><input id="annual_tuition" ng-blur="editmode1 = false; calcchange1()" type="text" ng-model="annualtuition" ng-show = "editmode1" my-enter="calcchange1()" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/><span ng-hide="editmode1">{{annualtuition | myCurrency}}</span><i class="fa fa-pencil" event-focus="click" event-focus-id="annual_tuition" ng-click="editmode1 = true; "></i></p>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<p>SUGGEST LOAN AMOUNT</p>
+										<p><input id="loan_amount" ng-blur="editmode2 = false; calcchange2()" type="text" ng-model="loanamount" ng-show = "editmode2" my-enter="calcchange2()" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/><span ng-hide="editmode2">{{loanamount | myCurrency}}</span><i class="fa fa-pencil" event-focus="click" event-focus-id="loan_amount" ng-click="editmode2 = true; "></i></p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12 month-result">
+							<div>
+								<P>&nbsp;</P>
+								<p>MINIMUM PAYMENT PER MONTH</p>
+								<p>(AFTER GRADUATION)</p>
+								<p class="loan-dbno-area"><span>{{monthpayment | myCurrency}}</span></p>
+								<p>&nbsp;</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1">	
+					<p class="db-no-str">{{loan_database_no_string}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row" style="background-color: #1c2729;">
+		<div class="col-sm-12">
+			<p style="background-color: #1c2729">&nbsp;</p>
+		</div>
+	</div>
+	<div class="head-comp-school row " id="head-comp">
+		<h1>COMPARE SCHOOLS</h1>
+		<%= fa_icon "chevron-down 2x"%>
+		<%= fa_icon "chevron-down 1x"%>
+	</div>
+	<div class="detail-comp-school row" ng-controller="school-compare">	
+		<div class="col-sm-10 col-sm-offset-1">	
+			<div class="row">
+				<div class="col-sm-1 ">	
+					<p>SCHOOL</p>
+				</div>
+				<div class="col-sm-4 col-sm-offset-1 ">
+					<input class="col-sm-12" type="text"  data-provide ="typeahead" data-source="<%=@schoolnames%>" ng-model = "schoolname1", ng-change = 'refreshmajor1();' placeholder="SCHOOL 1 NAME">	
+				</div>
+				<div class="col-sm-4 col-sm-offset-1 ">
+					<input class="col-sm-12" type="text" data-provide ="typeahead" data-source="<%=@schoolnames%>" ng-model = "schoolname2", ng-change = 'refreshmajor2(); ' placeholder="SCHOOL 2 NAME">	
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-10 col-sm-offset-1">
+			<div class="row">
+				<div class="col-sm-1">	
+					<p>MAJOR</p>
+				</div>
+				<div class="col-sm-4 col-sm-offset-1">
+					<label><%= fa_icon "chevron-down"%></label>
+					<select class="select1 col-sm-12" ng-model = "major1" ng-change = 'refreshcalc1()'>
+						<option style="display: none"  value="" disabled selected>SCHOOL 1 Major</option>
+						<option value="{{major}}" ng-repeat="major in majors1">{{major}}</option>	
+					</select>	
+				</div>
+				<div class="col-sm-4 col-sm-offset-1">
+					<label><%= fa_icon "chevron-down"%></label>				
+					<select  class="select1 col-sm-12" ng-model = "major2" ng-change = 'refreshcalc2()'>
+						<option style="display: none"  value="" disabled selected>SCHOOL 2 Major</option>
+						<option value="{{major}}" ng-repeat="major in majors2">{{major}}</option>	
+					</select>		
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-10 col-sm-offset-1 detail-data">
+			<div class="row">
+				<div class="col-sm-1">	
+					<p>MAJOR</p>
+					<p>RANKING</p>
+				</div>
+				<div class="col-sm-4 col-sm-offset-1 numerical-data">
+					<p>{{majorranking1}}</p>
+				</div>
+				<div class="col-sm-4 col-sm-offset-1 numerical-data">
+					<p>{{majorranking2}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-10  col-sm-offset-1 detail-data">
+			<div class="row">
+				<div class="col-sm-1 ">	
+					<p>OVERALL</p>
+					<p>RANKING</p>
+				</div>
+				<div class="col-sm-4 col-sm-offset-1 numerical-data">
+					<p>{{overallranking1}}</p>
+				</div>
+				<div class="col-sm-4 col-sm-offset-1 numerical-data">
+					<p>{{overallranking2}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-10 col-sm-offset-1 detail-data">
+			<div class="row">
+				<div class="col-sm-1 ">	
+					<p>MEDIAN</p>
+					<p>SALARY</p>
+				</div>
+				<div class="col-sm-4 col-sm-offset-1 numerical-data">
+					<p>{{mediumsalary1 | myCurrency}}{{comp_school1_star}}</p>
+				</div>
+				<div class="col-sm-4 col-sm-offset-1 numerical-data">
+					<p>{{mediumsalary2 | myCurrency}}{{comp_school2_star}}</p>
+				</div>
+			</div>
+		</div>	
+		<div class="col-sm-10 col-sm-offset-1 detail-data">
+			<div class="row">
+				<div class="col-sm-1 ">	
+					<p>TUITION</p>
+					<p>&&nbsp;FEES</p>
+				</div>
+				<div class="col-sm-4 col-sm-offset-1 numerical-data">
+					<p>{{tuition1 | myCurrency}}</p>
+				</div>
+				<div class="col-sm-4 col-sm-offset-1 numerical-data">
+					<p>{{tuition2 | myCurrency}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-10 col-sm-offset-1 detail-data">
+			<div class="row">
+				<div class="col-sm-1">	
+					<p>REPAYMENT</p>
+					<p>PERIOD</p>
+				</div>
+				<div class="col-sm-4 col-sm-offset-1 numerical-data">
+					<p>10 Years</p>
+				</div>
+				<div class="col-sm-4 col-sm-offset-1 numerical-data">
+					<p>10 Years</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-10 col-sm-offset-1">
+			<div class="row">
+				<div class="col-sm-1">	
+					<p>MONTHLY</p>
+					<p>PAYMENT</p>
+				</div>
+				<div class="col-sm-4  col-sm-offset-1 numerical-data">
+					<p>{{monthpayment1 | myCurrency}}</p>
+				</div>
+				<div class="col-sm-4 col-sm-offset-1 numerical-data">
+					<p>{{monthpayment2 | myCurrency}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-10 col-sm-offset-1">
+			<div class="row" style="position: relative;" class="comp_db_nodispaly_part">
+			 	<p class="db-no-str">{{comp_database_no_string1}}</p>
+				<p class="db-no-str">{{comp_database_no_string2}}</p>
+				<div>
+			</div>
+		</div>
+		<div class="clearfix" style="margin:0px;"></div>
+	</div>	
+</div>
+<script>
+	$(document).ready(function() {$('.select1').select2({});});
+</script>	

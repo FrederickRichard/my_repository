@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Schoolloan</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
+<script type="text/javascript">
+$(document).ready(function() {
+  	$('#select2-chosen-2').text("GPA (Optional)"); 	
+  	$('#select2-chosen-4').text("WORK EXPERIENCE (Optional)"); 	
+  	$('#select2-chosen-6').text("STATE OF RESIDENCE (Optional)"); 	
+  	$('#select2-chosen-8').text("CAREER PATH (Optional)"); 	
+  	$('#select2-chosen-10').text("SCHOOL 1 MAJOR"); 	
+  	$('#select2-chosen-12').text("SCHOOL 2 MAJOR"); 	
+
+});
+</script>
